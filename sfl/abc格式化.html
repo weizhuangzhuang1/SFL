@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .module-navigationBrand {
+            position: absolute;
+            width: 526px;
+            min-height: 100px;
+            left: -320px;
+            padding-top: 8px;
+            top: 28px;
+            background-repeat: no-repeat
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main {
+            padding: 20px;
+            height: 307px;
+            width: 484px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-top: 0
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left {
+            width: 269px;
+            height: 307px;
+            display: inline-block;
+            border-right: 1px solid #7d7d7d;
+            padding-right: 10px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left input {
+            background-color: #eee;
+            border-radius: 42px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 12px;
+            width: 260px;
+            text-indent: 20px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span {
+            width: 38px;
+            height: 38px;
+            display: inline-block;
+            text-align: center;
+            line-height: 38px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #b2b2b2
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span.has {
+            color: #000
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span.has:hover {
+            color: #e00
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right {
+            width: 200px;
+            height: 307px;
+            float: right;
+            overflow-y: scroll;
+            position: relative
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll {
+            margin-left: 20px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 26px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-title.miss {
+            display: none
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list {
+            line-height: 22px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list a {
+            color: #3b3b3b;
+            font-size: 12px;
+            line-height: 22px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list a:hover {
+            color: #e00
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list.miss {
+            display: none
+        }
+        
+        l .module-tabList {
+            float: right;
+            height: 36px;
+            position: absolute;
+            right: 0;
+            bottom: -7px
+        }
+        
+        .module-tabList li {
+            display: inline-block;
+            line-height: 36px;
+            cursor: pointer
+        }
+        
+        .module-tabList li a {
+            font-size: 14px;
+            color: #474747
+        }
+        
+        .module-tabList li em {
+            margin: 0 12px;
+            color: #dadada
+        }
+        
+        .module-tabList li.active a,
+        .module-tabList li:hover a {
+            font-weight: bolder;
+            color: #000
+        }
+        
+        .module_tabGroupList {
+            position: relative
+        }
+        
+        .module_tabGroupList ul {
+            height: 320px;
+            transition-duration: 1.2s;
+            display: block;
+            position: absolute;
+            opacity: 0;
+            z-index: 1
+        }
+        
+        .module_tabGroupList ul.module_tabGroupList_show {
+            opacity: 1;
+            z-index: 10
+        }
+        
+        .module_tabGroupList ul li {
+            width: 149px;
+            height: 79px;
+            border-right: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            background-color: #fff
+        }
+        
+        .module_tabGroupList ul li.hover .module_tabGroupList_hover,
+        .module_tabGroupList ul li:hover .module_tabGroupList_hover {
+            display: block
+        }
+        
+        .module_tabGroupList ul li a {
+            width: 144px;
+            height: 60px;
+            display: block;
+            margin: 5px auto
+        }
+        
+        .module_tabGroupList ul li a img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .8);
+            padding-top: 12px;
+            display: none
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover .module_tabGroupList_banner {
+            color: #fff;
+            text-align: center;
+            height: 28px;
+            line-height: 28px
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover .module_tabGroupList_link {
+            width: 84px;
+            height: 20px;
+            text-align: center;
+            color: #fff;
+            background-color: #e00;
+            line-height: 18px;
+            border-radius: 12px
+        }
+        
+        .module_categoryProduct {
+            width: 800px;
+            height: 500px;
+            float: right;
+            border-left: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            box-sizing: border-box;
+            background-color: #fff
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li {
+            padding: 15px 10px;
+            padding-right: 0;
+            width: 200px;
+            height: 250px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid #f5f5f5;
+            border-top: 1px solid #f5f5f5;
+            box-sizing: border-box
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li:first-child,
+        .module_categoryProduct .module_categoryProduct_li:nth-child(5) {
+            width: 199px
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_img {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: -5px;
+            bottom: 0;
+            transition-duration: .3s;
+            transition-timing-function: ease-out;
+            z-index: 1
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_img img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_content {
+            display: block;
+            font-size: 14px;
+            color: #000;
+            position: relative;
+            z-index: 10
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span.has {
+            color: #000
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span.has:hover {
+            color: #e00
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right {
+            width: 200px;
+            height: 307px;
+            float: right;
+            overflow-y: scroll;
+            position: relative
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll {
+            margin-left: 20px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 26px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-title.miss {
+            display: none
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list {
+            line-height: 22px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list a {
+            color: #3b3b3b;
+            font-size: 12px;
+            line-height: 22px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list a:hover {
+            color: #e00
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list.miss {
+            display: none
+        }
+        
+        .module-tabList {
+            float: right;
+            height: 36px;
+            position: absolute;
+            right: 0;
+            bottom: -7px
+        }
+        
+        .module-tabList li {
+            display: inline-block;
+            line-height: 36px;
+            cursor: pointer
+        }
+        
+        .module-tabList li a {
+            font-size: 14px;
+            color: #474747
+        }
+        
+        .module-tabList li em {
+            margin: 0 12px;
+            color: #dadada
+        }
+        
+        .module-tabList li.active a,
+        .module-tabList li:hover a {
+            font-weight: bolder;
+            color: #000
+        }
+        
+        .module_tabGroupList {
+            position: relative
+        }
+        
+        .module_tabGroupList ul {
+            height: 320px;
+            transition-duration: 1.2s;
+            display: block;
+            position: absolute;
+            opacity: 0;
+            z-index: 1
+        }
+        
+        .module_tabGroupList ul.module_tabGroupList_show {
+            opacity: 1;
+            z-index: 10
+        }
+        
+        .module_tabGroupList ul li {
+            width: 149px;
+            height: 79px;
+            border-right: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            background-color: #fff
+        }
+        
+        .module_tabGroupList ul li.hover .module_tabGroupList_hover,
+        .module_tabGroupList ul li:hover .module_tabGroupList_hover {
+            display: block
+        }
+        
+        .module_tabGroupList ul li a {
+            width: 144px;
+            height: 60px;
+            display: block;
+            margin: 5px auto
+        }
+        
+        .module_tabGroupList ul li a img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .8);
+            padding-top: 12px;
+            display: none
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover .module_tabGroupList_banner {
+            color: #fff;
+            text-align: center;
+            height: 28px;
+            line-height: 28px
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover .module_tabGroupList_link {
+            width: 84px;
+            height: 20px;
+            text-align: center;
+            color: #fff;
+            background-color: #e00;
+            line-height: 18px;
+            border-radius: 12px
+        }
+        
+        .module_categoryProduct {
+            width: 800px;
+            height: 500px;
+            float: right;
+            border-left: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            box-sizing: border-box;
+            background-color: #fff
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li {
+            padding: 15px 10px;
+            padding-right: 0;
+            width: 200px;
+            height: 250px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid #f5f5f5;
+            border-top: 1px solid #f5f5f5;
+            box-sizing: border-box
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li:first-child,
+        .module_categoryProduct .module_categoryProduct_li:nth-child(5) {
+            width: 199px
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_img {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: -5px;
+            bottom: 0;
+            transition-duration: .3s;
+            transition-timing-function: ease-out;
+            z-index: 1
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_img img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_content {
+            display: block;
+            font-size: 14px;
+            color: #000;
+            position: relative;
+            z-index: 10
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_brand {
+            font-weight: bolder
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_content {
+            line-height: 18px
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_price {
+            color: #000;
+            margin-top: 4px
+        }
+        
+        .module_categoryProduct_li:hover .module_categoryProduct_img {
+            right: 10px
+        }
+        
+        .module_categoryBrand {
+            height: 60px;
+            background-color: #fff;
+            display: inline-block
+        }
+        
+        .module_categoryBrand li {
+            display: inline-block;
+            width: 149px;
+            height: 56px;
+            overflow: hidden
+        }
+        
+        .module_categoryBrand li a {
+            float: left;
+            width: 147px;
+            height: 60px
+        }
+        /* .module_categoryBrand li a:hover { background-color: hsla(0, 0%, */
+    </style>
+</head>
+
+<body>
+    <div class="module-navigationBrand navigation-info-content-menu-row-hover">
+        <div class="module-navigationBrand-main">
+            <div class="module-navigationBrand-main-left">
+                <input type="text" placeholder="请搜索" value="" />
+                <div class="module-navigationBrand-main-left-Alphabet">
+                    <span class="has">A</span>
+                    <span class="has">B</span>
+                    <span class="has">C</span>
+                    <span class="has">D</span>
+                    <span class="has">E</span>
+                    <span class="has">F</span>
+                    <span class="has">G</span>
+                    <span class="has">H</span>
+                    <span class="has">I</span>
+                    <span class="has">J</span>
+                    <span class="has">K</span>
+                    <span class="has">L</span>
+                    <span class="has">M</span>
+                    <span class="has">N</span>
+                    <span class="has">O</span>
+                    <span class="has">P</span>
+                    <span class="">Q</span>
+                    <span class="has">R</span>
+                    <span class="has">S</span>
+                    <span class="has">T</span>
+                    <span class="has">U</span>
+                    <span class="has">V</span>
+                    <span class="has">W</span>
+                    <span class="">X</span>
+                    <span class="has">Y</span>
+                    <span class="">Z</span>
+                    <span class="has">0-9</span></div>
+            </div>
+            <div class="module-navigationBrand-main-right">
+                <div class="module-navigationBrand-main-right-scroll" id="brand-A">
+                    <div class="module-navigationBrand-main-right-scroll-title">A</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/acquadiparma-433501/?intcmp=NewHome|Brands|AllBrands|All|Acquadiparma  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/acquadiparma-433501/?intcmp=NewHome|Brands|AllBrands|All|Acquadiparma'"
+                                tppabs="https://www.sephora.cn/brand/acquadiparma-433501/?intcmp=NewHome|Brands|AllBrands|All|Acquadiparma" target="_blank">ACQUADIPARMA ĺ¸ĺ°çäšć°´</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/algenist-400501/?intcmp=NewHome|Brands|AllBrands|All|Algenist  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/algenist-400501/?intcmp=NewHome|Brands|AllBrands|All|Algenist'"
+                                tppabs="https://www.sephora.cn/brand/algenist-400501/?intcmp=NewHome|Brands|AllBrands|All|Algenist" target="_blank">ALGENIST ĺĽĽć°ĺ°ź</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/amazingcosmetics-646/?intcmp=NewHome|Brands|AllBrands|All|Amazingcosmetics  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/amazingcosmetics-646/?intcmp=NewHome|Brands|AllBrands|All|Amazingcosmetics'"
+                                tppabs="https://www.sephora.cn/brand/amazingcosmetics-646/?intcmp=NewHome|Brands|AllBrands|All|Amazingcosmetics" target="_blank">AMAZINGCOSMETICSÂŽ ĺĽĽçç</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/annasui-102/?intcmp=NewHome|Brands|AllBrands|All|Annasui  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/annasui-102/?intcmp=NewHome|Brands|AllBrands|All|Annasui'"
+                                tppabs="https://www.sephora.cn/brand/annasui-102/?intcmp=NewHome|Brands|AllBrands|All|Annasui" target="_blank">ANNASUI ĺŽĺ¨č</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/ateliercologne-433507/?intcmp=NewHome|Brands|AllBrands|All|Ateliercologne  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/ateliercologne-433507/?intcmp=NewHome|Brands|AllBrands|All|Ateliercologne'"
+                                tppabs="https://www.sephora.cn/brand/ateliercologne-433507/?intcmp=NewHome|Brands|AllBrands|All|Ateliercologne" target="_blank">AtelierCologne ćŹ§ç</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/atkinsons-494069/?intcmp=NewHome|Brands|AllBrands|All|Atkinsons  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/atkinsons-494069/?intcmp=NewHome|Brands|AllBrands|All|Atkinsons'"
+                                tppabs="https://www.sephora.cn/brand/atkinsons-494069/?intcmp=NewHome|Brands|AllBrands|All|Atkinsons" target="_blank">ATKINSONS éżçšéćŁŽ</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-B">
+                    <div class="module-navigationBrand-main-right-scroll-title">B</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/balenciaga-821/?intcmp=NewHome|Brands|AllBrands|All|Balenciaga  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/balenciaga-821/?intcmp=NewHome|Brands|AllBrands|All|Balenciaga'"
+                                tppabs="https://www.sephora.cn/brand/balenciaga-821/?intcmp=NewHome|Brands|AllBrands|All|Balenciaga" target="_blank">BALENCIAGA ĺˇ´éťä¸ĺŽś</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/beautyblender-443501/?intcmp=NewHome|Brands|AllBrands|All|Beautyblender  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/beautyblender-443501/?intcmp=NewHome|Brands|AllBrands|All|Beautyblender'"
+                                tppabs="https://www.sephora.cn/brand/beautyblender-443501/?intcmp=NewHome|Brands|AllBrands|All|Beautyblender" target="_blank">beautyblender çžĺŚč</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/belloite-436007/?intcmp=NewHome|Brands|AllBrands|All|Belloite  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/belloite-436007/?intcmp=NewHome|Brands|AllBrands|All|Belloite'"
+                                tppabs="https://www.sephora.cn/brand/belloite-436007/?intcmp=NewHome|Brands|AllBrands|All|Belloite" target="_blank">Belloite č´ć´äšč</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/benefit-261/?intcmp=NewHome|Brands|AllBrands|All|Benefit  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/benefit-261/?intcmp=NewHome|Brands|AllBrands|All|Benefit'"
+                                tppabs="https://www.sephora.cn/brand/benefit-261/?intcmp=NewHome|Brands|AllBrands|All|Benefit" target="_blank">BENEFIT č´ç˛ĺŚ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/biotherm-421/?intcmp=NewHome|Brands|AllBrands|All|Biotherm  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/biotherm-421/?intcmp=NewHome|Brands|AllBrands|All|Biotherm'"
+                                tppabs="https://www.sephora.cn/brand/biotherm-421/?intcmp=NewHome|Brands|AllBrands|All|Biotherm" target="_blank">BIOTHERM ç˘§ćŹ§ćł</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/bobbibrown-804/?intcmp=NewHome|Brands|AllBrands|All|Bobbibrown  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/bobbibrown-804/?intcmp=NewHome|Brands|AllBrands|All|Bobbibrown'"
+                                tppabs="https://www.sephora.cn/brand/bobbibrown-804/?intcmp=NewHome|Brands|AllBrands|All|Bobbibrown" target="_blank">BOBBIBROWN č­ćŻćł˘ć</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/bottegaveneta-494028/?intcmp=NewHome|Brands|AllBrands|All|Bottegaveneta  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/bottegaveneta-494028/?intcmp=NewHome|Brands|AllBrands|All|Bottegaveneta'"
+                                tppabs="https://www.sephora.cn/brand/bottegaveneta-494028/?intcmp=NewHome|Brands|AllBrands|All|Bottegaveneta" target="_blank">BOTTEGA VENETA ččśĺŽś</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/browgal-467504/?intcmp=NewHome|Brands|AllBrands|All|Browgal  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/browgal-467504/?intcmp=NewHome|Brands|AllBrands|All|Browgal'"
+                                tppabs="https://www.sephora.cn/brand/browgal-467504/?intcmp=NewHome|Brands|AllBrands|All|Browgal" target="_blank">BROWGAL çĺŽ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/burberry-126/?intcmp=NewHome|Brands|AllBrands|All|Burberry  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/burberry-126/?intcmp=NewHome|Brands|AllBrands|All|Burberry'"
+                                tppabs="https://www.sephora.cn/brand/burberry-126/?intcmp=NewHome|Brands|AllBrands|All|Burberry" target="_blank">BURBERRY ĺćĺŠ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/bvlgari-110/?intcmp=NewHome|Brands|AllBrands|All|Bvlgari  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/bvlgari-110/?intcmp=NewHome|Brands|AllBrands|All|Bvlgari'"
+                                tppabs="https://www.sephora.cn/brand/bvlgari-110/?intcmp=NewHome|Brands|AllBrands|All|Bvlgari" target="_blank">BVLGARI ĺŽć źä¸˝</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/byterry-494124/?intcmp=NewHome|Brands|AllBrands|All|Byterry  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/byterry-494124/?intcmp=NewHome|Brands|AllBrands|All|Byterry'"
+                                tppabs="https://www.sephora.cn/brand/byterry-494124/?intcmp=NewHome|Brands|AllBrands|All|Byterry" target="_blank">BY TERRY ćł°čŽ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/blackmores-494053/?intcmp=NewHome|Brands|AllBrands|All|Blackmores  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/blackmores-494053/?intcmp=NewHome|Brands|AllBrands|All|Blackmores'"
+                                tppabs="https://www.sephora.cn/brand/blackmores-494053/?intcmp=NewHome|Brands|AllBrands|All|Blackmores" target="_blank">Blackmores ćžłä˝łĺŽ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/beglow-494058/?intcmp=NewHome|Brands|AllBrands|All|Beglow  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/beglow-494058/?intcmp=NewHome|Brands|AllBrands|All|Beglow'"
+                                tppabs="https://www.sephora.cn/brand/beglow-494058/?intcmp=NewHome|Brands|AllBrands|All|Beglow" target="_blank">BeGlow ç˝ć ź</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-C">
+                    <div class="module-navigationBrand-main-right-scroll-title">C</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/clarins-147/?intcmp=NewHome|Brands|AllBrands|All|Clarins  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/clarins-147/?intcmp=NewHome|Brands|AllBrands|All|Clarins'"
+                                tppabs="https://www.sephora.cn/brand/clarins-147/?intcmp=NewHome|Brands|AllBrands|All|Clarins" target="_blank">CLARINS ĺ¨éľčŻ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/caudalie-328/?intcmp=NewHome|Brands|AllBrands|All|Caudalie  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/caudalie-328/?intcmp=NewHome|Brands|AllBrands|All|Caudalie'"
+                                tppabs="https://www.sephora.cn/brand/caudalie-328/?intcmp=NewHome|Brands|AllBrands|All|Caudalie" target="_blank">CAUDALIE ćŹ§çźä¸˝</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/clinique-188/?intcmp=NewHome|Brands|AllBrands|All|Clinique  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/clinique-188/?intcmp=NewHome|Brands|AllBrands|All|Clinique'"
+                                tppabs="https://www.sephora.cn/brand/clinique-188/?intcmp=NewHome|Brands|AllBrands|All|Clinique" target="_blank">CLINIQUE ĺŠç˘§</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/calvinklein-112/?intcmp=NewHome|Brands|AllBrands|All|Calvinklein  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/calvinklein-112/?intcmp=NewHome|Brands|AllBrands|All|Calvinklein'"
+                                tppabs="https://www.sephora.cn/brand/calvinklein-112/?intcmp=NewHome|Brands|AllBrands|All|Calvinklein" target="_blank">CALVINKLEIN ĺĄĺ°ćĺéˇćŠ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/chloe-381/?intcmp=NewHome|Brands|AllBrands|All|Chloe  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/chloe-381/?intcmp=NewHome|Brands|AllBrands|All|Chloe'"
+                                tppabs="https://www.sephora.cn/brand/chloe-381/?intcmp=NewHome|Brands|AllBrands|All|Chloe" target="_blank">CHLOE čťäž</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/clarisonic-701/?intcmp=NewHome|Brands|AllBrands|All|Clarisonic  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/clarisonic-701/?intcmp=NewHome|Brands|AllBrands|All|Clarisonic'"
+                                tppabs="https://www.sephora.cn/brand/clarisonic-701/?intcmp=NewHome|Brands|AllBrands|All|Clarisonic" target="_blank">CLARISONIC ç§čąä¸˝</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/clio-466501/?intcmp=NewHome|Brands|AllBrands|All|Clio  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/clio-466501/?intcmp=NewHome|Brands|AllBrands|All|Clio'"
+                                tppabs="https://www.sephora.cn/brand/clio-466501/?intcmp=NewHome|Brands|AllBrands|All|Clio" target="_blank">CLIO çčąćŹ§</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/carolinaherrera-494057/?intcmp=NewHome|Brands|AllBrands|All|Carolinaherrera  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/carolinaherrera-494057/?intcmp=NewHome|Brands|AllBrands|All|Carolinaherrera'"
+                                tppabs="https://www.sephora.cn/brand/carolinaherrera-494057/?intcmp=NewHome|Brands|AllBrands|All|Carolinaherrera" target="_blank">CAROLINA HERRERA ĺĄç˝çłĺ¨ĺčąć</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/chaling-494070/?intcmp=NewHome|Brands|AllBrands|All|Chaling  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/chaling-494070/?intcmp=NewHome|Brands|AllBrands|All|Chaling'"
+                                tppabs="https://www.sephora.cn/brand/chaling-494070/?intcmp=NewHome|Brands|AllBrands|All|Chaling" target="_blank">CHA LING čśçľ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/cocochicosme-494127/?intcmp=NewHome|Brands|AllBrands|All|Cocochicosme  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/cocochicosme-494127/?intcmp=NewHome|Brands|AllBrands|All|Cocochicosme'"
+                                tppabs="https://www.sephora.cn/brand/cocochicosme-494127/?intcmp=NewHome|Brands|AllBrands|All|Cocochicosme" target="_blank">Cocochi Cosme ĺŻĺŻçŞĺŻććź</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-D">
+                    <div class="module-navigationBrand-main-right-scroll-title">D</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/dior-184/?intcmp=NewHome|Brands|AllBrands|All|Dior  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/dior-184/?intcmp=NewHome|Brands|AllBrands|All|Dior'"
+                                tppabs="https://www.sephora.cn/brand/dior-184/?intcmp=NewHome|Brands|AllBrands|All|Dior" target="_blank">DIOR čżŞĺĽĽ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/drjart-745/?intcmp=NewHome|Brands|AllBrands|All|Drjart  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/drjart-745/?intcmp=NewHome|Brands|AllBrands|All|Drjart'"
+                                tppabs="https://www.sephora.cn/brand/drjart-745/?intcmp=NewHome|Brands|AllBrands|All|Drjart" target="_blank">DrJart čä˝łĺŠˇ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/decorative-741/?intcmp=NewHome|Brands|AllBrands|All|Decorative  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/decorative-741/?intcmp=NewHome|Brands|AllBrands|All|Decorative'"
+                                tppabs="https://www.sephora.cn/brand/decorative-741/?intcmp=NewHome|Brands|AllBrands|All|Decorative" target="_blank">DECORATIVE DECORATIVE</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/dtrt-416001/?intcmp=NewHome|Brands|AllBrands|All|Dtrt  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/dtrt-416001/?intcmp=NewHome|Brands|AllBrands|All|Dtrt'"
+                                tppabs="https://www.sephora.cn/brand/dtrt-416001/?intcmp=NewHome|Brands|AllBrands|All|Dtrt" target="_blank">DTRT ććŻä¸˝ĺ¤Ť</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/drarrivo-494071/?intcmp=NewHome|Brands|AllBrands|All|Drarrivo  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/drarrivo-494071/?intcmp=NewHome|Brands|AllBrands|All|Drarrivo'"
+                                tppabs="https://www.sephora.cn/brand/drarrivo-494071/?intcmp=NewHome|Brands|AllBrands|All|Drarrivo" target="_blank">Dr.arrivo Dr.arrivo</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-E">
+                    <div class="module-navigationBrand-main-right-scroll-title">E</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/esteelauder-201/?intcmp=NewHome|Brands|AllBrands|All|Esteelauder  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/esteelauder-201/?intcmp=NewHome|Brands|AllBrands|All|Esteelauder'"
+                                tppabs="https://www.sephora.cn/brand/esteelauder-201/?intcmp=NewHome|Brands|AllBrands|All|Esteelauder" target="_blank">ESTEELAUDER éčŻĺ°éť</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/esthederm-326/?intcmp=NewHome|Brands|AllBrands|All|Esthederm  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/esthederm-326/?intcmp=NewHome|Brands|AllBrands|All|Esthederm'"
+                                tppabs="https://www.sephora.cn/brand/esthederm-326/?intcmp=NewHome|Brands|AllBrands|All|Esthederm" target="_blank">ESTHEDERM éčŻćŚ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/eisenberg-301/?intcmp=NewHome|Brands|AllBrands|All|Eisenberg  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/eisenberg-301/?intcmp=NewHome|Brands|AllBrands|All|Eisenberg'"
+                                tppabs="https://www.sephora.cn/brand/eisenberg-301/?intcmp=NewHome|Brands|AllBrands|All|Eisenberg" target="_blank">EISENBERG äźčŻč´ć ź</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/ernolaszlo-494037/?intcmp=NewHome|Brands|AllBrands|All|Ernolaszlo  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/ernolaszlo-494037/?intcmp=NewHome|Brands|AllBrands|All|Ernolaszlo'"
+                                tppabs="https://www.sephora.cn/brand/ernolaszlo-494037/?intcmp=NewHome|Brands|AllBrands|All|Ernolaszlo" target="_blank">ERNO LASZLO ĺĽĽäźŚçşłç´ </a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/estheprolabo-494089/?intcmp=NewHome|Brands|AllBrands|All|Estheprolabo  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/estheprolabo-494089/?intcmp=NewHome|Brands|AllBrands|All|Estheprolabo'"
+                                tppabs="https://www.sephora.cn/brand/estheprolabo-494089/?intcmp=NewHome|Brands|AllBrands|All|Estheprolabo" target="_blank">ESTHE PRO LABO çć´ĺ°ĺ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/evelom-494090/?intcmp=NewHome|Brands|AllBrands|All|Evelom  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/evelom-494090/?intcmp=NewHome|Brands|AllBrands|All|Evelom'"
+                                tppabs="https://www.sephora.cn/brand/evelom-494090/?intcmp=NewHome|Brands|AllBrands|All|Evelom" target="_blank">EVE LOM äźčĺŽš</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/elemis-494125/?intcmp=NewHome|Brands|AllBrands|All|Elemis  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/elemis-494125/?intcmp=NewHome|Brands|AllBrands|All|Elemis'"
+                                tppabs="https://www.sephora.cn/brand/elemis-494125/?intcmp=NewHome|Brands|AllBrands|All|Elemis" target="_blank">ELEMIS čžä¸˝çž</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-F">
+                    <div class="module-navigationBrand-main-right-scroll-title">F</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/fresh-485001/?intcmp=NewHome|Brands|AllBrands|All|Fresh  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/fresh-485001/?intcmp=NewHome|Brands|AllBrands|All|Fresh'"
+                                tppabs="https://www.sephora.cn/brand/fresh-485001/?intcmp=NewHome|Brands|AllBrands|All|Fresh" target="_blank">Fresh éŚĽčžčŻ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/forbelovedone-134/?intcmp=NewHome|Brands|AllBrands|All|Forbelovedone  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/forbelovedone-134/?intcmp=NewHome|Brands|AllBrands|All|Forbelovedone'"
+                                tppabs="https://www.sephora.cn/brand/forbelovedone-134/?intcmp=NewHome|Brands|AllBrands|All|Forbelovedone" target="_blank">FORBELOVEDONE ĺŽ çąäšĺ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/foreo-404506/?intcmp=NewHome|Brands|AllBrands|All|Foreo  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/foreo-404506/?intcmp=NewHome|Brands|AllBrands|All|Foreo'"
+                                tppabs="https://www.sephora.cn/brand/foreo-404506/?intcmp=NewHome|Brands|AllBrands|All|Foreo" target="_blank">FOREO ćçĺ°</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/facesymbol-494123/?intcmp=NewHome|Brands|AllBrands|All|Facesymbol  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/facesymbol-494123/?intcmp=NewHome|Brands|AllBrands|All|Facesymbol'"
+                                tppabs="https://www.sephora.cn/brand/facesymbol-494123/?intcmp=NewHome|Brands|AllBrands|All|Facesymbol" target="_blank">Face Symbol ĺĺ­äšĺ­</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-G">
+                    <div class="module-navigationBrand-main-right-scroll-title">G</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/guerlain-186/?intcmp=NewHome|Brands|AllBrands|All|Guerlain  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/guerlain-186/?intcmp=NewHome|Brands|AllBrands|All|Guerlain'"
+                                tppabs="https://www.sephora.cn/brand/guerlain-186/?intcmp=NewHome|Brands|AllBrands|All|Guerlain" target="_blank">GUERLAIN ĺ¨ĺ°</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/givenchy-190/?intcmp=NewHome|Brands|AllBrands|All|Givenchy  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/givenchy-190/?intcmp=NewHome|Brands|AllBrands|All|Givenchy'"
+                                tppabs="https://www.sephora.cn/brand/givenchy-190/?intcmp=NewHome|Brands|AllBrands|All|Givenchy" target="_blank">GIVENCHY çşŞć˘ľĺ¸</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/giorgioarmani-148/?intcmp=NewHome|Brands|AllBrands|All|Giorgioarmani  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/giorgioarmani-148/?intcmp=NewHome|Brands|AllBrands|All|Giorgioarmani'"
+                                tppabs="https://www.sephora.cn/brand/giorgioarmani-148/?intcmp=NewHome|Brands|AllBrands|All|Giorgioarmani" target="_blank">GIORGIOARMANI éżçĺ°ź</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/glamglow-823/?intcmp=NewHome|Brands|AllBrands|All|Glamglow  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/glamglow-823/?intcmp=NewHome|Brands|AllBrands|All|Glamglow'"
+                                tppabs="https://www.sephora.cn/brand/glamglow-823/?intcmp=NewHome|Brands|AllBrands|All|Glamglow" target="_blank">GLAMGLOW ć źčąé­</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/gucci-104/?intcmp=NewHome|Brands|AllBrands|All|Gucci  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/gucci-104/?intcmp=NewHome|Brands|AllBrands|All|Gucci'"
+                                tppabs="https://www.sephora.cn/brand/gucci-104/?intcmp=NewHome|Brands|AllBrands|All|Gucci" target="_blank">GUCCI ĺ¤éŠ°</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-H">
+                    <div class="module-navigationBrand-main-right-scroll-title">H</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/herborist-187/?intcmp=NewHome|Brands|AllBrands|All|Herborist  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/herborist-187/?intcmp=NewHome|Brands|AllBrands|All|Herborist'"
+                                tppabs="https://www.sephora.cn/brand/herborist-187/?intcmp=NewHome|Brands|AllBrands|All|Herborist" target="_blank">HERBORIST ä˝°čé</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/hakubi-494038/?intcmp=NewHome|Brands|AllBrands|All|Hakubi  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/hakubi-494038/?intcmp=NewHome|Brands|AllBrands|All|Hakubi'"
+                                tppabs="https://www.sephora.cn/brand/hakubi-494038/?intcmp=NewHome|Brands|AllBrands|All|Hakubi" target="_blank">HAKUBI çĺŚ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/hera-494066/?intcmp=NewHome|Brands|AllBrands|All|Hera  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/hera-494066/?intcmp=NewHome|Brands|AllBrands|All|Hera'"
+                                tppabs="https://www.sephora.cn/brand/hera-494066/?intcmp=NewHome|Brands|AllBrands|All|Hera" target="_blank">HERA čľŤĺŚ</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-I">
+                    <div class="module-navigationBrand-main-right-scroll-title">I</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/isseymiyake-602/?intcmp=NewHome|Brands|AllBrands|All|Isseymiyake  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/isseymiyake-602/?intcmp=NewHome|Brands|AllBrands|All|Isseymiyake'"
+                                tppabs="https://www.sephora.cn/brand/isseymiyake-602/?intcmp=NewHome|Brands|AllBrands|All|Isseymiyake" target="_blank">ISSEYMIYAKE ä¸ĺŽä¸ç</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/iope-494064/?intcmp=NewHome|Brands|AllBrands|All|Iope  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/iope-494064/?intcmp=NewHome|Brands|AllBrands|All|Iope'"
+                                tppabs="https://www.sephora.cn/brand/iope-494064/?intcmp=NewHome|Brands|AllBrands|All|Iope" target="_blank">IOPE čžčŻşç˘§</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/inoherbtang-494126/?intcmp=NewHome|Brands|AllBrands|All|Inoherbtang  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/inoherbtang-494126/?intcmp=NewHome|Brands|AllBrands|All|Inoherbtang'"
+                                tppabs="https://www.sephora.cn/brand/inoherbtang-494126/?intcmp=NewHome|Brands|AllBrands|All|Inoherbtang" target="_blank">Inoherb Tang ç¸ĺŽćŹčĺ</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-J">
+                    <div class="module-navigationBrand-main-right-scroll-title">J</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/junejacobs-443001/?intcmp=NewHome|Brands|AllBrands|All|Junejacobs  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/junejacobs-443001/?intcmp=NewHome|Brands|AllBrands|All|Junejacobs'"
+                                tppabs="https://www.sephora.cn/brand/junejacobs-443001/?intcmp=NewHome|Brands|AllBrands|All|Junejacobs" target="_blank">JUNEJACOBS ĺ°ç§Żĺ¸</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/jackblack-494119/?intcmp=NewHome|Brands|AllBrands|All|Jackblack  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/jackblack-494119/?intcmp=NewHome|Brands|AllBrands|All|Jackblack'"
+                                tppabs="https://www.sephora.cn/brand/jackblack-494119/?intcmp=NewHome|Brands|AllBrands|All|Jackblack" target="_blank">JACK BLACK JACK BLACK</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-K">
+                    <div class="module-navigationBrand-main-right-scroll-title">K</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/kenzo-182/?intcmp=NewHome|Brands|AllBrands|All|Kenzo  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/kenzo-182/?intcmp=NewHome|Brands|AllBrands|All|Kenzo'"
+                                tppabs="https://www.sephora.cn/brand/kenzo-182/?intcmp=NewHome|Brands|AllBrands|All|Kenzo" target="_blank">KENZO ĺŻĺ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/kose-82/?intcmp=NewHome|Brands|AllBrands|All|Kose  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/kose-82/?intcmp=NewHome|Brands|AllBrands|All|Kose'"
+                                tppabs="https://www.sephora.cn/brand/kose-82/?intcmp=NewHome|Brands|AllBrands|All|Kose" target="_blank">KOSE éŤä¸</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-L">
+                    <div class="module-navigationBrand-main-right-scroll-title">L</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/lancome-401/?intcmp=NewHome|Brands|AllBrands|All|Lancome  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/lancome-401/?intcmp=NewHome|Brands|AllBrands|All|Lancome'"
+                                tppabs="https://www.sephora.cn/brand/lancome-401/?intcmp=NewHome|Brands|AllBrands|All|Lancome" target="_blank">LANCOME ĺ°čť</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/loewe-137/?intcmp=NewHome|Brands|AllBrands|All|Loewe  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/loewe-137/?intcmp=NewHome|Brands|AllBrands|All|Loewe'"
+                                tppabs="https://www.sephora.cn/brand/loewe-137/?intcmp=NewHome|Brands|AllBrands|All|Loewe" target="_blank">LOEWE ç˝ćĺ¨</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/lancaster-227/?intcmp=NewHome|Brands|AllBrands|All|Lancaster  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/lancaster-227/?intcmp=NewHome|Brands|AllBrands|All|Lancaster'"
+                                tppabs="https://www.sephora.cn/brand/lancaster-227/?intcmp=NewHome|Brands|AllBrands|All|Lancaster" target="_blank">LANCASTER ĺ°ĺä¸ćą</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/labseries-502/?intcmp=NewHome|Brands|AllBrands|All|Labseries  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/labseries-502/?intcmp=NewHome|Brands|AllBrands|All|Labseries'"
+                                tppabs="https://www.sephora.cn/brand/labseries-502/?intcmp=NewHome|Brands|AllBrands|All|Labseries" target="_blank">LABSERIES ćäť</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/laneige-222/?intcmp=NewHome|Brands|AllBrands|All|Laneige  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/laneige-222/?intcmp=NewHome|Brands|AllBrands|All|Laneige'"
+                                tppabs="https://www.sephora.cn/brand/laneige-222/?intcmp=NewHome|Brands|AllBrands|All|Laneige" target="_blank">LANEIGE ĺ°č</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/leanon-494022/?intcmp=NewHome|Brands|AllBrands|All|Leanon  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/leanon-494022/?intcmp=NewHome|Brands|AllBrands|All|Leanon'"
+                                tppabs="https://www.sephora.cn/brand/leanon-494022/?intcmp=NewHome|Brands|AllBrands|All|Leanon" target="_blank">LEANON ä¸¤ä¸¤</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-M">
+                    <div class="module-navigationBrand-main-right-scroll-title">M</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/mac-493503/?intcmp=NewHome|Brands|AllBrands|All|Mac  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/mac-493503/?intcmp=NewHome|Brands|AllBrands|All|Mac'"
+                                tppabs="https://www.sephora.cn/brand/mac-493503/?intcmp=NewHome|Brands|AllBrands|All|Mac" target="_blank">M.A.C é­ĺŻ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/makeupforever-183/?intcmp=NewHome|Brands|AllBrands|All|Makeupforever  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/makeupforever-183/?intcmp=NewHome|Brands|AllBrands|All|Makeupforever'"
+                                tppabs="https://www.sephora.cn/brand/makeupforever-183/?intcmp=NewHome|Brands|AllBrands|All|Makeupforever" target="_blank">MAKEUPFOREVER çŤçč˛</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/millerharris-494121/?intcmp=NewHome|Brands|AllBrands|All|Millerharris  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/millerharris-494121/?intcmp=NewHome|Brands|AllBrands|All|Millerharris'"
+                                tppabs="https://www.sephora.cn/brand/millerharris-494121/?intcmp=NewHome|Brands|AllBrands|All|Millerharris" target="_blank">Miller Harris çąłĺâ˘ćľˇččŻ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/meguminohonpo-494029/?intcmp=NewHome|Brands|AllBrands|All|Meguminohonpo  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/meguminohonpo-494029/?intcmp=NewHome|Brands|AllBrands|All|Meguminohonpo'"
+                                tppabs="https://www.sephora.cn/brand/meguminohonpo-494029/?intcmp=NewHome|Brands|AllBrands|All|Meguminohonpo" target="_blank">MEGUMI NO HONPO ć äšćŹéş</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/marcjacobs-120/?intcmp=NewHome|Brands|AllBrands|All|Marcjacobs  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/marcjacobs-120/?intcmp=NewHome|Brands|AllBrands|All|Marcjacobs'"
+                                tppabs="https://www.sephora.cn/brand/marcjacobs-120/?intcmp=NewHome|Brands|AllBrands|All|Marcjacobs" target="_blank">MARC JACOBS čŤć°</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/maogepinglight-494130/?intcmp=NewHome|Brands|AllBrands|All|Maogepinglight  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/maogepinglight-494130/?intcmp=NewHome|Brands|AllBrands|All|Maogepinglight'"
+                                tppabs="https://www.sephora.cn/brand/maogepinglight-494130/?intcmp=NewHome|Brands|AllBrands|All|Maogepinglight" target="_blank">MAOGEPING LIGHT ćŻćĺšłĺéľ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/maisonmargiela-494027/?intcmp=NewHome|Brands|AllBrands|All|Maisonmargiela  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/maisonmargiela-494027/?intcmp=NewHome|Brands|AllBrands|All|Maisonmargiela'"
+                                tppabs="https://www.sephora.cn/brand/maisonmargiela-494027/?intcmp=NewHome|Brands|AllBrands|All|Maisonmargiela" target="_blank">Maison Margiela Maison Margiela</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/makeuperaser-445004/?intcmp=NewHome|Brands|AllBrands|All|Makeuperaser  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/makeuperaser-445004/?intcmp=NewHome|Brands|AllBrands|All|Makeuperaser'"
+                                tppabs="https://www.sephora.cn/brand/makeuperaser-445004/?intcmp=NewHome|Brands|AllBrands|All|Makeuperaser" target="_blank">MakeupEraser çŤĺĄäźčŽč</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/mariedalgarcolorstudio-469501/?intcmp=NewHome|Brands|AllBrands|All|Mariedalgarcolorstudio  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/mariedalgarcolorstudio-469501/?intcmp=NewHome|Brands|AllBrands|All|Mariedalgarcolorstudio'"
+                                tppabs="https://www.sephora.cn/brand/mariedalgarcolorstudio-469501/?intcmp=NewHome|Brands|AllBrands|All|Mariedalgarcolorstudio" target="_blank">MarieDalgarColorStudio çä¸˝éťä˝łč˛ĺ˝ŠĺˇĽä˝ĺŽ¤</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/menardsp-129/?intcmp=NewHome|Brands|AllBrands|All|Menardsp  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/menardsp-129/?intcmp=NewHome|Brands|AllBrands|All|Menardsp'"
+                                tppabs="https://www.sephora.cn/brand/menardsp-129/?intcmp=NewHome|Brands|AllBrands|All|Menardsp" target="_blank">MENARDSP çžäźĺ¨ĺ¤</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/miumiu-441001/?intcmp=NewHome|Brands|AllBrands|All|Miumiu  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/miumiu-441001/?intcmp=NewHome|Brands|AllBrands|All|Miumiu'"
+                                tppabs="https://www.sephora.cn/brand/miumiu-441001/?intcmp=NewHome|Brands|AllBrands|All|Miumiu" target="_blank">MIUMIU çźŞçźŞ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/montblanc-494067/?intcmp=NewHome|Brands|AllBrands|All|Montblanc  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/montblanc-494067/?intcmp=NewHome|Brands|AllBrands|All|Montblanc'"
+                                tppabs="https://www.sephora.cn/brand/montblanc-494067/?intcmp=NewHome|Brands|AllBrands|All|Montblanc" target="_blank">MONTBLANC ä¸ĺŽéž</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/moschino-494120/?intcmp=NewHome|Brands|AllBrands|All|Moschino  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/moschino-494120/?intcmp=NewHome|Brands|AllBrands|All|Moschino'"
+                                tppabs="https://www.sephora.cn/brand/moschino-494120/?intcmp=NewHome|Brands|AllBrands|All|Moschino" target="_blank">MOSCHINO éťćŻĺĽčŻş</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-N">
+                    <div class="module-navigationBrand-main-right-scroll-title">N</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/narcisorodriguez-494091/?intcmp=NewHome|Brands|AllBrands|All|Narcisorodriguez  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/narcisorodriguez-494091/?intcmp=NewHome|Brands|AllBrands|All|Narcisorodriguez'"
+                                tppabs="https://www.sephora.cn/brand/narcisorodriguez-494091/?intcmp=NewHome|Brands|AllBrands|All|Narcisorodriguez" target="_blank">NARCISO RODRIGUEZ çşłčĽżç´˘ ç˝ĺžˇéć źćŻ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/nudestix-479012/?intcmp=NewHome|Brands|AllBrands|All|Nudestix  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/nudestix-479012/?intcmp=NewHome|Brands|AllBrands|All|Nudestix'"
+                                tppabs="https://www.sephora.cn/brand/nudestix-479012/?intcmp=NewHome|Brands|AllBrands|All|Nudestix" target="_blank">nudestix çž˝ĺžˇčŻ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/nuxe-486501/?intcmp=NewHome|Brands|AllBrands|All|Nuxe  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/nuxe-486501/?intcmp=NewHome|Brands|AllBrands|All|Nuxe'"
+                                tppabs="https://www.sephora.cn/brand/nuxe-486501/?intcmp=NewHome|Brands|AllBrands|All|Nuxe" target="_blank">NUXE ćŹ§ć </a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/nuface-494092/?intcmp=NewHome|Brands|AllBrands|All|Nuface  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/nuface-494092/?intcmp=NewHome|Brands|AllBrands|All|Nuface'"
+                                tppabs="https://www.sephora.cn/brand/nuface-494092/?intcmp=NewHome|Brands|AllBrands|All|Nuface" target="_blank">NUFACE NUFACE</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-O">
+                    <div class="module-navigationBrand-main-right-scroll-title">O</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/oleva-662/?intcmp=NewHome|Brands|AllBrands|All|Oleva  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/oleva-662/?intcmp=NewHome|Brands|AllBrands|All|Oleva'"
+                                tppabs="https://www.sephora.cn/brand/oleva-662/?intcmp=NewHome|Brands|AllBrands|All|Oleva" target="_blank">Oleva+ ĺĽĽć´č˛</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/opi-453501/?intcmp=NewHome|Brands|AllBrands|All|Opi  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/opi-453501/?intcmp=NewHome|Brands|AllBrands|All|Opi'"
+                                tppabs="https://www.sephora.cn/brand/opi-453501/?intcmp=NewHome|Brands|AllBrands|All|Opi" target="_blank">OPI OPI</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-P">
+                    <div class="module-navigationBrand-main-right-scroll-title">P</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/peterthomasroth-342/?intcmp=NewHome|Brands|AllBrands|All|Peterthomasroth  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/peterthomasroth-342/?intcmp=NewHome|Brands|AllBrands|All|Peterthomasroth'"
+                                tppabs="https://www.sephora.cn/brand/peterthomasroth-342/?intcmp=NewHome|Brands|AllBrands|All|Peterthomasroth" target="_blank">PETERTHOMASROTH ĺ˝źĺžç˝ĺ¤Ť</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/percyandreed-490001/?intcmp=NewHome|Brands|AllBrands|All|Percyandreed  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/percyandreed-490001/?intcmp=NewHome|Brands|AllBrands|All|Percyandreed'"
+                                tppabs="https://www.sephora.cn/brand/percyandreed-490001/?intcmp=NewHome|Brands|AllBrands|All|Percyandreed" target="_blank">PERCYANDREED ä˝ŠĺŚä¸˝</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/philips-413001/?intcmp=NewHome|Brands|AllBrands|All|Philips  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/philips-413001/?intcmp=NewHome|Brands|AllBrands|All|Philips'"
+                                tppabs="https://www.sephora.cn/brand/philips-413001/?intcmp=NewHome|Brands|AllBrands|All|Philips" target="_blank">PHILIPS éŁĺŠćľŚ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/plabeau-494059/?intcmp=NewHome|Brands|AllBrands|All|Plabeau  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/plabeau-494059/?intcmp=NewHome|Brands|AllBrands|All|Plabeau'"
+                                tppabs="https://www.sephora.cn/brand/plabeau-494059/?intcmp=NewHome|Brands|AllBrands|All|Plabeau" target="_blank">PLABEAU č°ąčąĺ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/prada-522/?intcmp=NewHome|Brands|AllBrands|All|Prada  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/prada-522/?intcmp=NewHome|Brands|AllBrands|All|Prada'"
+                                tppabs="https://www.sephora.cn/brand/prada-522/?intcmp=NewHome|Brands|AllBrands|All|Prada" target="_blank">PRADA ćŽćčžž</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-R">
+                    <div class="module-navigationBrand-main-right-scroll-title">R</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/refa-406002/?intcmp=NewHome|Brands|AllBrands|All|Refa  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/refa-406002/?intcmp=NewHome|Brands|AllBrands|All|Refa'"
+                                tppabs="https://www.sephora.cn/brand/refa-406002/?intcmp=NewHome|Brands|AllBrands|All|Refa" target="_blank">ReFa éťç</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/renefurterer-121/?intcmp=NewHome|Brands|AllBrands|All|Renefurterer  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/renefurterer-121/?intcmp=NewHome|Brands|AllBrands|All|Renefurterer'"
+                                tppabs="https://www.sephora.cn/brand/renefurterer-121/?intcmp=NewHome|Brands|AllBrands|All|Renefurterer" target="_blank">RENE FURTERER éŚĽçťżĺžˇé</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/repacell-494068/?intcmp=NewHome|Brands|AllBrands|All|Repacell  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/repacell-494068/?intcmp=NewHome|Brands|AllBrands|All|Repacell'"
+                                tppabs="https://www.sephora.cn/brand/repacell-494068/?intcmp=NewHome|Brands|AllBrands|All|Repacell" target="_blank">REPACELL çéĺ¸</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-S">
+                    <div class="module-navigationBrand-main-right-scroll-title">S</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/sephoracollection-1/?intcmp=NewHome|Brands|AllBrands|All|Sephoracollection  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/sephoracollection-1/?intcmp=NewHome|Brands|AllBrands|All|Sephoracollection'"
+                                tppabs="https://www.sephora.cn/brand/sephoracollection-1/?intcmp=NewHome|Brands|AllBrands|All|Sephoracollection" target="_blank">SEPHORACOLLECTION ä¸čĺ°</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/skii-626/?intcmp=NewHome|Brands|AllBrands|All|Skii  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/skii-626/?intcmp=NewHome|Brands|AllBrands|All|Skii'"
+                                tppabs="https://www.sephora.cn/brand/skii-626/?intcmp=NewHome|Brands|AllBrands|All|Skii" target="_blank">SK-II SK-II</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/shiseido-647/?intcmp=NewHome|Brands|AllBrands|All|Shiseido  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/shiseido-647/?intcmp=NewHome|Brands|AllBrands|All|Shiseido'"
+                                tppabs="https://www.sephora.cn/brand/shiseido-647/?intcmp=NewHome|Brands|AllBrands|All|Shiseido" target="_blank">SHISEIDO čľçĺ </a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/shuuemura-401501/?intcmp=NewHome|Brands|AllBrands|All|Shuuemura  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/shuuemura-401501/?intcmp=NewHome|Brands|AllBrands|All|Shuuemura'"
+                                tppabs="https://www.sephora.cn/brand/shuuemura-401501/?intcmp=NewHome|Brands|AllBrands|All|Shuuemura" target="_blank">SHUUEMURA ć¤ćç§</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/shobi-466009/?intcmp=NewHome|Brands|AllBrands|All|Shobi  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/shobi-466009/?intcmp=NewHome|Brands|AllBrands|All|Shobi'"
+                                tppabs="https://www.sephora.cn/brand/shobi-466009/?intcmp=NewHome|Brands|AllBrands|All|Shobi" target="_blank">SHO-BI ĺŚçžĺ </a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/sephorafavorites-494025/?intcmp=NewHome|Brands|AllBrands|All|Sephorafavorites  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/sephorafavorites-494025/?intcmp=NewHome|Brands|AllBrands|All|Sephorafavorites'"
+                                tppabs="https://www.sephora.cn/brand/sephorafavorites-494025/?intcmp=NewHome|Brands|AllBrands|All|Sephorafavorites" target="_blank">SEPHORA FAVORITES ä¸čĺ°ç˛žé</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/systemprofessional-459001/?intcmp=NewHome|Brands|AllBrands|All|Systemprofessional  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/systemprofessional-459001/?intcmp=NewHome|Brands|AllBrands|All|Systemprofessional'"
+                                tppabs="https://www.sephora.cn/brand/systemprofessional-459001/?intcmp=NewHome|Brands|AllBrands|All|Systemprofessional" target="_blank">SYSTEM PROFESSIONAL ĺžˇç ä¸</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/sebastian-404503/?intcmp=NewHome|Brands|AllBrands|All|Sebastian  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/sebastian-404503/?intcmp=NewHome|Brands|AllBrands|All|Sebastian'"
+                                tppabs="https://www.sephora.cn/brand/sebastian-404503/?intcmp=NewHome|Brands|AllBrands|All|Sebastian" target="_blank">SEBASTIAN ĺĄĺˇ´ćŻćą</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/skininc-492001/?intcmp=NewHome|Brands|AllBrands|All|Skininc  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/skininc-492001/?intcmp=NewHome|Brands|AllBrands|All|Skininc'"
+                                tppabs="https://www.sephora.cn/brand/skininc-492001/?intcmp=NewHome|Brands|AllBrands|All|Skininc" target="_blank">SKININC ćçŚčš</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/skinvitals-61/?intcmp=NewHome|Brands|AllBrands|All|Skinvitals  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/skinvitals-61/?intcmp=NewHome|Brands|AllBrands|All|Skinvitals'"
+                                tppabs="https://www.sephora.cn/brand/skinvitals-61/?intcmp=NewHome|Brands|AllBrands|All|Skinvitals" target="_blank">SKINVITALS çť´čćł</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/stageq-484001/?intcmp=NewHome|Brands|AllBrands|All|Stageq  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/stageq-484001/?intcmp=NewHome|Brands|AllBrands|All|Stageq'"
+                                tppabs="https://www.sephora.cn/brand/stageq-484001/?intcmp=NewHome|Brands|AllBrands|All|Stageq" target="_blank">STAGEQ ć˝ĺŠˇĺ§Źčť</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/sulwhasoo-494065/?intcmp=NewHome|Brands|AllBrands|All|Sulwhasoo  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/sulwhasoo-494065/?intcmp=NewHome|Brands|AllBrands|All|Sulwhasoo'"
+                                tppabs="https://www.sephora.cn/brand/sulwhasoo-494065/?intcmp=NewHome|Brands|AllBrands|All|Sulwhasoo" target="_blank">Sulwhasoo éŞčąç§</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/swisse-494054/?intcmp=NewHome|Brands|AllBrands|All|Swisse  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/swisse-494054/?intcmp=NewHome|Brands|AllBrands|All|Swisse'"
+                                tppabs="https://www.sephora.cn/brand/swisse-494054/?intcmp=NewHome|Brands|AllBrands|All|Swisse" target="_blank">Swisse ćŻçť´čŻ</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-T">
+                    <div class="module-navigationBrand-main-right-scroll-title">T</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/tiffanyco-493501/?intcmp=NewHome|Brands|AllBrands|All|Tiffanyco  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/tiffanyco-493501/?intcmp=NewHome|Brands|AllBrands|All|Tiffanyco'"
+                                tppabs="https://www.sephora.cn/brand/tiffanyco-493501/?intcmp=NewHome|Brands|AllBrands|All|Tiffanyco" target="_blank">TIFFANY&amp;Co. ččĺ°ź</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/tweezerman-744/?intcmp=NewHome|Brands|AllBrands|All|Tweezerman  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/tweezerman-744/?intcmp=NewHome|Brands|AllBrands|All|Tweezerman'"
+                                tppabs="https://www.sephora.cn/brand/tweezerman-744/?intcmp=NewHome|Brands|AllBrands|All|Tweezerman" target="_blank">TWEEZERMAN ĺžŽäšé­</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/thebeautools-494030/?intcmp=NewHome|Brands|AllBrands|All|Thebeautools  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/thebeautools-494030/?intcmp=NewHome|Brands|AllBrands|All|Thebeautools'"
+                                tppabs="https://www.sephora.cn/brand/thebeautools-494030/?intcmp=NewHome|Brands|AllBrands|All|Thebeautools" target="_blank">The Beautools äźĺ§Źçžĺ¨</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-U">
+                    <div class="module-navigationBrand-main-right-scroll-title">U</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/unitouch-482011/?intcmp=NewHome|Brands|AllBrands|All|Unitouch  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/unitouch-482011/?intcmp=NewHome|Brands|AllBrands|All|Unitouch'"
+                                tppabs="https://www.sephora.cn/brand/unitouch-482011/?intcmp=NewHome|Brands|AllBrands|All|Unitouch" target="_blank">UNITOUCH äźčçź</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-V">
+                    <div class="module-navigationBrand-main-right-scroll-title">V</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/versace-149/?intcmp=NewHome|Brands|AllBrands|All|Versace  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/versace-149/?intcmp=NewHome|Brands|AllBrands|All|Versace'"
+                                tppabs="https://www.sephora.cn/brand/versace-149/?intcmp=NewHome|Brands|AllBrands|All|Versace" target="_blank">VERSACE čćĺ˛</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/vancleefarpels-494032/?intcmp=NewHome|Brands|AllBrands|All|Vancleefarpels  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/vancleefarpels-494032/?intcmp=NewHome|Brands|AllBrands|All|Vancleefarpels'"
+                                tppabs="https://www.sephora.cn/brand/vancleefarpels-494032/?intcmp=NewHome|Brands|AllBrands|All|Vancleefarpels" target="_blank">VAN CLEEF &amp; ARPELS ć˘ľĺéĺŽ</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-W">
+                    <div class="module-navigationBrand-main-right-scroll-title">W</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/wei-801/?intcmp=NewHome|Brands|AllBrands|All|Wei  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/wei-801/?intcmp=NewHome|Brands|AllBrands|All|Wei'"
+                                tppabs="https://www.sephora.cn/brand/wei-801/?intcmp=NewHome|Brands|AllBrands|All|Wei" target="_blank">WEI ččäšçž</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/wella-404502/?intcmp=NewHome|Brands|AllBrands|All|Wella  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/wella-404502/?intcmp=NewHome|Brands|AllBrands|All|Wella'"
+                                tppabs="https://www.sephora.cn/brand/wella-404502/?intcmp=NewHome|Brands|AllBrands|All|Wella" target="_blank">WELLA ĺ¨ĺ¨</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-Y">
+                    <div class="module-navigationBrand-main-right-scroll-title">Y</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/yaman-487004/?intcmp=NewHome|Brands|AllBrands|All|Yaman  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/yaman-487004/?intcmp=NewHome|Brands|AllBrands|All|Yaman'"
+                                tppabs="https://www.sephora.cn/brand/yaman-487004/?intcmp=NewHome|Brands|AllBrands|All|Yaman" target="_blank">YAMAN éč</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/ysl-108/?intcmp=NewHome|Brands|AllBrands|All|Ysl  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/ysl-108/?intcmp=NewHome|Brands|AllBrands|All|Ysl'"
+                                tppabs="https://www.sephora.cn/brand/ysl-108/?intcmp=NewHome|Brands|AllBrands|All|Ysl" target="_blank">YSL ĺŁç˝ĺ°çžĺŚ</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/yesic-494128/?intcmp=NewHome|Brands|AllBrands|All|Yesic  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/yesic-494128/?intcmp=NewHome|Brands|AllBrands|All|Yesic'"
+                                tppabs="https://www.sephora.cn/brand/yesic-494128/?intcmp=NewHome|Brands|AllBrands|All|Yesic" target="_blank">YES!IC YES!IC</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-0-9">
+                    <div class="module-navigationBrand-main-right-scroll-title">0-9</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a href="javascript:if(confirm('https://www.sephora.cn/brand/3ce-487501/?intcmp=NewHome|Brands|AllBrands|All|3ce  \n\n¸ĂÎÄźţÎŢˇ¨ÓĂ Teleport Ultra ĎÂÔŘ, ŇňÎŞ ˛ťżÉÓĂ, ťňˇĹĆúÁËĎÂÔŘ, ťňĎîÄżź´˝ŤÍŁÖšĄŁ  \n\nÄăĎëÔÚˇţÎńĆ÷ÉĎ´ňżŞËü?'))window.location='https://www.sephora.cn/brand/3ce-487501/?intcmp=NewHome|Brands|AllBrands|All|3ce'"
+                                tppabs="https://www.sephora.cn/brand/3ce-487501/?intcmp=NewHome|Brands|AllBrands|All|3ce" target="_blank">3CE ä¸çšç</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,729 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.center {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#swiper1 {
+    width: 140px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+#swiper1 {
+    font-size: 13px;
+    color: #ffff;
+    line-height: 30px;
+}
+
+.Head-welcome {
+    width: 100%;
+    height: 30px;
+    background-color: #000000;
+    font-size: 12px;
+}
+
+.head-l {
+    margin-left: 10px;
+    color: #FFFFFF;
+}
+
+.Head-welcome-l {
+    height: 30px;
+    line-height: 30px;
+}
+
+.Head-welcome-l a {
+    margin-left: 10px;
+    color: #FFFFFF;
+}
+
+.Head-welcome-r {
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+}
+
+.Head-welcome-r a {
+    margin-right: 10px;
+    color: #FFFFFF;
+}
+
+.Head-welcome-r-log {
+    width: 12px;
+    height: 12px;
+}
+
+.Head-welcome-all {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+}
+
+#red {
+    color: red;
+}
+
+.Central-search {
+    height: 84px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.center .log {
+    width: 240px;
+    height: 32px;
+}
+
+.search-bar {
+    width: 650px;
+    height: 60px;
+}
+
+.search_form {
+    widows: 630px;
+    height: 34px;
+}
+
+
+/*左边输入框设置样式*/
+
+.input_text {
+    width: 540px;
+    height: 34px;
+    border: 1px solid#C8C8C8;
+    /*清除掉默认的padding*/
+    padding: 0px;
+    /*提示字首行缩进*/
+    text-indent: 10px;
+    /*去掉蓝色高亮框*/
+    outline: none;
+    /*用浮动解决内联元素错位及小间距的问题*/
+    float: left;
+}
+
+.input_sub {
+    width: 90px;
+    height: 36px;
+    background: #000000;
+    /*去掉submit按钮默认边框*/
+    border: 0px;
+    /*改成右浮动也是可以的*/
+    float: left;
+    color: white;
+    /*搜索的字体颜色为白色*/
+    cursor: pointer;
+    /*鼠标变为小手*/
+}
+
+.search-bar ul li {
+    float: left;
+    display: inline-block;
+    padding: 0 4px;
+    font-size: 12px;
+}
+
+.search-bar ul li a {
+    color: #acacac;
+}
+
+.header-search-cart {
+    position: relative;
+    width: 188px;
+    height: 36px;
+    border: 1px solid rgb(172, 172, 172);
+    background-color: #fff;
+    z-index: 999;
+}
+
+.header-search-cart:hover .active {
+    /* border-bottom: 3px solid #fff; */
+    visibility: visible;
+}
+
+.header-search-cart .icon {
+    display: inline-block;
+    width: 18px;
+    height: 26px;
+    vertical-align: -6px;
+    background-image: url(https://ssl1.sephorastatic.cn/soa/pc/images/shopping_bag.png);
+}
+
+.header-search-cart>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 34px;
+    color: #333;
+}
+
+.header-search-cart .active {
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 34px;
+    right: -1px;
+    width: 380px;
+    height: 140px;
+    padding: 22px 20px;
+    border: 1px solid rgb(172, 172, 172);
+    z-index: -1;
+    background-color: #fff;
+}
+
+.header-search-cart .active .write {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 187px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.header-search-cart .active .icon-a {
+    /* display: block; */
+    width: 66px;
+    height: 80px;
+    background: url(https://ssl1.sephorastatic.cn/soa/pc/images/package.png) no-repeat center;
+}
+
+.active-info {
+    width: 250px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #757575;
+}
+
+.active-info .btn {
+    width: fit-content;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 2px 6px;
+    margin-top: 14px;
+    background-color: red;
+}
+
+.All-product-categories {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+}
+
+.All-product-log {
+    color: #fff;
+    width: 240px;
+    height: 36px;
+    line-height: 36px;
+    background: url(https://ssl1.sephorastatic.cn/soa/pc/images/classified.png) no-repeat;
+}
+
+.product-categories {
+    margin-left: -390px;
+    margin-top: 10px;
+    height: 41px;
+}
+
+.product-categories ul li {
+    float: left;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.product-categories ul li a {
+    color: black;
+}
+
+.All-product-log-r {
+    margin-top: -10px;
+}
+
+#swiper2 {
+    height: 400px;
+}
+
+#swiper2 .swiper-button-prev {
+    margin-left: 240px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#swiper2 .swiper-button-next {
+    margin-right: -10px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#swiper2 .swiper-button-prev:hover #swiper2 .swiper-button-prev {
+    background-color: rgba(0, 0, 0, .9);
+}
+
+#swiper2 .swiper-pagination-bullet {
+    width: 80px;
+    border-radius: 0;
+    height: 3px;
+}
+
+.header-menu-sidebar:hover .sidebar_select {
+    display: block;
+}
+
+.sidebar_select {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    color: #333;
+    font-weight: bold;
+    z-index: 3;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar_select>ul>li {
+    padding: 10px 0 0 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #eeeeee;
+    z-index: 1;
+}
+
+.sidebar_select>ul>li:hover {
+    box-shadow: -7px -4px 4px -4px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar_select>ul>li:hover+li {
+    box-shadow: inset -2px 4px 4px -2px rgba(0, 0, 0, 0.2)
+}
+
+.active_ber {
+    box-shadow: inset -6px 1px 3px -5px rgba(0, 0, 0, 0.2)
+}
+
+.sidebar_select p {
+    line-height: 22px;
+    margin: 1px auto -8px;
+}
+
+.sidebar_select a span {
+    color: #757575;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.sidebar_icon_b {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 30px;
+    left: -37px;
+    background: url("https://ssl1.sephorastatic.cn/soa/pc/images/navigation_sprite_wrap.png") no-repeat;
+    background-position: 0 5px;
+    background-size: 100%;
+    z-index: -1;
+}
+
+.sidebar_icon_s {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 315px;
+    left: 197px;
+    background: url("https://ssl1.sephorastatic.cn/soa/pc/images/navigation_sprite_wrap.png") no-repeat;
+    background-position: -29px -100px;
+    background-size: 200%;
+    z-index: 3;
+}
+
+
+/* 二级导航栏 */
+
+.sidebar-select-hover {
+    width: 960px;
+    height: 552px;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 240px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-select-hover .hover-left {
+    width: 570px;
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-select-hover .hover-left h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.hover-left .info-top {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #dddbdb;
+}
+
+.hover-left .info-main {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hover-left .info-main li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hover-left .info-main span {
+    font-size: 12px;
+    color: #bebebe;
+    margin-right: 20px;
+}
+
+.hover-left .info-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hover-left .info-bottom span {
+    width: 150px;
+    height: 68px;
+}
+
+.sidebar-select-hover .hover-right {
+    width: 280px;
+}
+
+#swiper2 {
+    height: 400px;
+}
+
+#swiper2 .swiper-button-prev {
+    margin-left: 230px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#swiper2 .swiper-button-next {
+    margin-right: -10px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#swiper2 .swiper-button-prev:hover #swiper2 .swiper-button-prev {
+    background-color: rgba(0, 0, 0, .9);
+}
+
+#swiper2 .swiper-pagination-bullet {
+    width: 80px;
+    border-radius: 0;
+    height: 3px;
+}
+
+
+/* //搜索下面 */
+
+.header-menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-menu-sidebar {
+    position: relative;
+    width: 240px;
+    height: 36px;
+    font-size: 16px;
+    line-height: 36px;
+    padding-left: 20px;
+    color: #fff;
+    cursor: pointer;
+    background: url("https://ssl1.sephorastatic.cn/soa/pc/images/classified.png");
+}
+
+.header-menu-nav {
+    display: flex;
+    width: 806px;
+}
+
+.header-menu-item {
+    margin-left: 40px;
+}
+
+.header-menu-item a {
+    display: block;
+    margin-top: 8px;
+    color: #333;
+    font-size: 16px;
+}
+
+.header-menu-item a:hover {
+    color: red;
+}
+
+.header-menu-logo {
+    width: 154px;
+    height: 40px;
+}
+
+.header-menu-sidebar:hover .sidebar_select {
+    display: block;
+}
+
+.sidebar_select {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    color: #333;
+    font-weight: bold;
+    z-index: 3;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar_select>ul>li {
+    padding: 10px 0 0 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #eeeeee;
+    z-index: 1;
+}
+
+.sidebar_select>ul>li:hover {
+    box-shadow: -7px -4px 4px -4px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar_select>ul>li:hover+li {
+    box-shadow: inset -2px 4px 4px -2px rgba(0, 0, 0, 0.2)
+}
+
+.active_ber {
+    box-shadow: inset -6px 1px 3px -5px rgba(0, 0, 0, 0.2)
+}
+
+.sidebar_select p {
+    line-height: 22px;
+    margin: 1px auto -8px;
+}
+
+.sidebar_select a span {
+    color: #757575;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.sidebar_icon_b {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 30px;
+    left: -37px;
+    background: url("https://ssl1.sephorastatic.cn/soa/pc/images/navigation_sprite_wrap.png") no-repeat;
+    background-position: 0 5px;
+    background-size: 100%;
+    z-index: -1;
+}
+
+.sidebar_icon_s {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 315px;
+    left: 197px;
+    background: url("https://ssl1.sephorastatic.cn/soa/pc/images/navigation_sprite_wrap.png") no-repeat;
+    background-position: -29px -100px;
+    background-size: 200%;
+    z-index: 3;
+}
+
+
+/* 二级导航栏 */
+
+.sidebar-select-hover {
+    widows: 960px;
+    height: 554px;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 240px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-select-hover .hover-left {
+    width: 570px;
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-select-hover .hover-left h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.hover-left .info-top {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #dddbdb;
+}
+
+.hover-left .info-main {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hover-left .info-main li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hover-left .info-main span {
+    font-size: 12px;
+    color: #bebebe;
+    margin-right: 20px;
+}
+
+.hover-left .info-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hover-left .info-bottom span {
+    width: 150px;
+    height: 68px;
+}
+
+.sidebar-select-hover .hover-right {
+    width: 290px;
+    /* height: 550px; */
+}
+
+.banner-1 {
+    height: 140px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.banner-1-p {
+    float: left;
+    margin-left: 12px;
+}
+
+.all-brands-head {
+    margin-top: 70px;
+    height: 36px;
+display: flex;
+justify-content: space-between;
+}
+.brand-body-content{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: nowrap;
+}
+.all-brands-head-log {
+    height: 36px;
+    width: 387px;
+    background: url(https://ssl1.sephorastatic.cn/soa/pc/images/sprite_title_v2.png) no-repeat;
+    background-repeat: no-repeat;
+    background-position: -20px -13px;
+    background-size: 100%;
+}
+.module-tabList {
+
+	height:36px;
+	right:0;
+	bottom:-7px;
+}
+.module-tabList li {
+	display:inline-block;
+	line-height:36px;
+	cursor:pointer
+}
+.module-tabList li a {
+	font-size:14px;
+	color:#474747
+}
+.module-tabList li em {
+	margin:0 12px;
+	color:#dadada
+}
+.module-tabList li.active a,.module-tabList li:hover a {
+	font-weight:bolder;
+	color:#000
+}
+.brand-body-content center{
+    height: 320px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.brand-body-content-swper #swiper3{
+    width: 599px;
+    height: 320px;
+}
+#swiper3 .swiper-button-prev {
+    height: 70px;
+    margin-left: -10px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#swiper3 .swiper-button-next {
+  margin-right: -10px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#swiper3 .swiper-button-prev:hover #swiper3 .swiper-button-prev {
+    background-color: rgba(0, 0, 0, .9);
+}
+
+#swiper3 .swiper-pagination-bullet {
+    width: 80px;
+    border-radius: 0;
+    height: 3px;
+}
+.brand-body-content-Commodity-module{
+    width: 599px;
+    height: 320px;
+    background-color: #eeee;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "Microsoft YaHei", "tahoma ", "Arial", ;
+        }
+        
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        font,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-weight: inherit;
+            font-style: inherit;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .navWrap {
+            width: 100px;
+            height: 200px;
+            position: fixed;
+            left: 50%;
+            top: 100px;
+            margin-left: 250px;
+            border: #666 solid 1px;
+        }
+        
+        .navWrap li {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        
+        .navWrap li a {
+            color: #000;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .floorWrap {
+            width: 500px;
+            margin: 0 auto;
+        }
+        
+        .floorWrap li {
+            height: 600px;
+            text-align: center;
+            line-height: 600px;
+            border: 1px solid red;
+        }
+        
+        .current {
+            background-color: #908CC8;
+        }
+        
+        .current a {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navWrap">
+        <li class="current"><a href="#item1">1楼</a></li>
+        <li><a href="#item2">2楼</a></li>
+        <li><a href="#item3">3楼</a></li>
+        <li><a href="#item4">4楼</a></li>
+        <li><a href="#item5">5楼</a></li>
+    </ul>
+    <ul class="floorWrap">
+        <li id="item1" class="item">一楼内容</li>
+        <li id="item2" class="item">二楼内容</li>
+        <li id="item3" class="item">三楼内容</li>
+        <li id="item4" class="item">四楼内容</li>
+        <li id="item5" class="item">五楼内容</li>
+    </ul>
+    <script src="./js/lib/jquery/jquery.js"></script>
+    <script>
+        $(window).on("scroll", function() {
+            var scrollTop = $(document).scrollTop();
+            var floor = $('.floorWrap');
+            var nav = $('.navWrap').find('li');
+            var items = $('.floorWrap').find('.item');
+
+            items.each(function() {
+                var m = $(this);
+                var itemTop = m.offset().top;
+                if (scrollTop > itemTop - 200) {
+                    console.log(scrollTop - itemTop);
+                } else {
+                    return false;
+                }
+            })
+        })
+
+        $(".navWrap li").on("click", function() {
+            var m = $(this);
+            var nav = $('.navWrap').find("li");
+            var floor = $(".floorWrap").find("li");
+            var floorOffsetTop = floor.eq(m.index()).offset().top;
+            $("body,html").animate({
+                "scrollTop": floorOffsetTop
+            }, 500)
+        })
+    </script>
+</body>
+
+</html>

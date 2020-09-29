@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>jquery：搜索框效果</title>
+<script type="text/javascript" src="./js/lib/jquery/jquery.js"></script>
+<script type="text/javascript">
+ $(function(){
+  $('#search').val("请输入搜索内容").addClass("c1");
+  $('#search').focus(function(){//搜索框获得焦点时
+   if($('#search').val()=="请输入搜索内容"){
+    $('#search').val("").addClass("c2").removeClass("c1");
+   }
+  });
+  $('#search').blur(function(){//搜索框失去焦点时
+   if($('#search').val()==""){
+    $('#search').val("请输入搜索内容").addClass("c1").removeClass("c2");
+   }
+  });
+ });
+</script>
+<style type="text/css">
+.c1{color:gray;font-style:italic;}
+.c2{color:#000;font-style:normal;}
+</style>
+</head>
+<body>
+<input type="text" size="38" id="search" /><button>搜索</button>
+</body>
+</html>

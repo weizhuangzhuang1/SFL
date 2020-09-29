@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            background: none;
+            outline: none;
+            border: none;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .module-navigationBrand {
+            position: absolute;
+            width: 526px;
+            min-height: 100px;
+            /* left: -320px; */
+            padding-top: 8px;
+            top: 28px;
+            background-repeat: no-repeat
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main {
+            padding: 20px;
+            height: 307px;
+            width: 484px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-top: 0
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left {
+            width: 269px;
+            height: 307px;
+            display: inline-block;
+            border-right: 1px solid #7d7d7d;
+            padding-right: 10px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left input {
+            background-color: #eee;
+            border-radius: 42px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 12px;
+            width: 260px;
+            text-indent: 20px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span {
+            width: 38px;
+            height: 38px;
+            display: inline-block;
+            text-align: center;
+            line-height: 38px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #b2b2b2
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span.has {
+            color: #000
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span.has:hover {
+            color: #e00
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right {
+            width: 200px;
+            height: 307px;
+            float: right;
+            overflow-y: scroll;
+            position: relative
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll {
+            margin-left: 20px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 26px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-title.miss {
+            display: none
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list {
+            line-height: 22px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list a {
+            color: #3b3b3b;
+            font-size: 12px;
+            line-height: 22px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list a:hover {
+            color: #e00
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list.miss {
+            display: none
+        }
+        
+        l .module-tabList {
+            float: right;
+            height: 36px;
+            position: absolute;
+            right: 0;
+            bottom: -7px
+        }
+        
+        .module-tabList li {
+            display: inline-block;
+            line-height: 36px;
+            cursor: pointer
+        }
+        
+        .module-tabList li a {
+            font-size: 14px;
+            color: #474747
+        }
+        
+        .module-tabList li em {
+            margin: 0 12px;
+            color: #dadada
+        }
+        
+        .module-tabList li.active a,
+        .module-tabList li:hover a {
+            font-weight: bolder;
+            color: #000
+        }
+        
+        .module_tabGroupList {
+            position: relative
+        }
+        
+        .module_tabGroupList ul {
+            height: 320px;
+            transition-duration: 1.2s;
+            display: block;
+            position: absolute;
+            opacity: 0;
+            z-index: 1
+        }
+        
+        .module_tabGroupList ul.module_tabGroupList_show {
+            opacity: 1;
+            z-index: 10
+        }
+        
+        .module_tabGroupList ul li {
+            width: 149px;
+            height: 79px;
+            border-right: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            background-color: #fff
+        }
+        
+        .module_tabGroupList ul li.hover .module_tabGroupList_hover,
+        .module_tabGroupList ul li:hover .module_tabGroupList_hover {
+            display: block
+        }
+        
+        .module_tabGroupList ul li a {
+            width: 144px;
+            height: 60px;
+            display: block;
+            margin: 5px auto
+        }
+        
+        .module_tabGroupList ul li a img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .8);
+            padding-top: 12px;
+            display: none
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover .module_tabGroupList_banner {
+            color: #fff;
+            text-align: center;
+            height: 28px;
+            line-height: 28px
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover .module_tabGroupList_link {
+            width: 84px;
+            height: 20px;
+            text-align: center;
+            color: #fff;
+            background-color: #e00;
+            line-height: 18px;
+            border-radius: 12px
+        }
+        
+        .module_categoryProduct {
+            width: 800px;
+            height: 500px;
+            float: right;
+            border-left: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            box-sizing: border-box;
+            background-color: #fff
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li {
+            padding: 15px 10px;
+            padding-right: 0;
+            width: 200px;
+            height: 250px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid #f5f5f5;
+            border-top: 1px solid #f5f5f5;
+            box-sizing: border-box
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li:first-child,
+        .module_categoryProduct .module_categoryProduct_li:nth-child(5) {
+            width: 199px
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_img {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: -5px;
+            bottom: 0;
+            transition-duration: .3s;
+            transition-timing-function: ease-out;
+            z-index: 1
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_img img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_content {
+            display: block;
+            font-size: 14px;
+            color: #000;
+            position: relative;
+            z-index: 10
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span.has {
+            color: #000
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-left .module-navigationBrand-main-left-Alphabet span.has:hover {
+            color: #e00
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right {
+            width: 200px;
+            height: 307px;
+            float: right;
+            overflow-y: scroll;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll {
+            margin-left: 0px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 26px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-title.miss {
+            display: none
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list {
+            line-height: 22px
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list a {
+            color: #3b3b3b;
+            font-size: 12px;
+            line-height: 22px;
+            white-space: nowrap;
+            margin-left: -35px;
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list a:hover {
+            color: #e00
+        }
+        
+        .module-navigationBrand .module-navigationBrand-main .module-navigationBrand-main-right-scroll-list.miss {
+            display: none
+        }
+        
+        .module-tabList {
+            float: right;
+            height: 36px;
+            position: absolute;
+            right: 0;
+            bottom: -7px
+        }
+        
+        .module-tabList li {
+            display: inline-block;
+            line-height: 36px;
+            cursor: pointer
+        }
+        
+        .module-tabList li a {
+            font-size: 14px;
+            color: #474747
+        }
+        
+        .module-tabList li em {
+            margin: 0 12px;
+            color: #dadada
+        }
+        
+        .module-tabList li.active a,
+        .module-tabList li:hover a {
+            font-weight: bolder;
+            color: #000
+        }
+        
+        .module_tabGroupList {
+            position: relative
+        }
+        
+        .module_tabGroupList ul {
+            height: 320px;
+            transition-duration: 1.2s;
+            display: block;
+            position: absolute;
+            opacity: 0;
+            z-index: 1
+        }
+        
+        .module_tabGroupList ul.module_tabGroupList_show {
+            opacity: 1;
+            z-index: 10
+        }
+        
+        .module_tabGroupList ul li {
+            width: 149px;
+            height: 79px;
+            border-right: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            background-color: #fff
+        }
+        
+        .module_tabGroupList ul li.hover .module_tabGroupList_hover,
+        .module_tabGroupList ul li:hover .module_tabGroupList_hover {
+            display: block
+        }
+        
+        .module_tabGroupList ul li a {
+            width: 144px;
+            height: 60px;
+            display: block;
+            margin: 5px auto
+        }
+        
+        .module_tabGroupList ul li a img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .8);
+            padding-top: 12px;
+            display: none
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover .module_tabGroupList_banner {
+            color: #fff;
+            text-align: center;
+            height: 28px;
+            line-height: 28px
+        }
+        
+        .module_tabGroupList ul li .module_tabGroupList_hover .module_tabGroupList_link {
+            width: 84px;
+            height: 20px;
+            text-align: center;
+            color: #fff;
+            background-color: #e00;
+            line-height: 18px;
+            border-radius: 12px
+        }
+        
+        .module_categoryProduct {
+            width: 800px;
+            height: 500px;
+            float: right;
+            border-left: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            box-sizing: border-box;
+            background-color: #fff
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li {
+            padding: 15px 10px;
+            padding-right: 0;
+            width: 200px;
+            height: 250px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid #f5f5f5;
+            border-top: 1px solid #f5f5f5;
+            box-sizing: border-box
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li:first-child,
+        .module_categoryProduct .module_categoryProduct_li:nth-child(5) {
+            width: 199px
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_img {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: -5px;
+            bottom: 0;
+            transition-duration: .3s;
+            transition-timing-function: ease-out;
+            z-index: 1
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_img img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_content {
+            display: block;
+            font-size: 14px;
+            color: #000;
+            position: relative;
+            z-index: 10
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_brand {
+            font-weight: bolder
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_content {
+            line-height: 18px
+        }
+        
+        .module_categoryProduct .module_categoryProduct_li .module_categoryProduct_price {
+            color: #000;
+            margin-top: 4px
+        }
+        
+        .module_categoryProduct_li:hover .module_categoryProduct_img {
+            right: 10px
+        }
+        
+        .module_categoryBrand {
+            height: 60px;
+            background-color: #fff;
+            display: inline-block
+        }
+        
+        .module_categoryBrand li {
+            display: inline-block;
+            width: 149px;
+            height: 56px;
+            overflow: hidden
+        }
+        
+        .module_categoryBrand li a {
+            float: left;
+            width: 147px;
+            height: 60px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="module-navigationBrand navigation-info-content-menu-row-hover" style="margin: 0 auto;">
+        <div class="module-navigationBrand-main">
+            <div class="module-navigationBrand-main-left"><input type="text" placeholder="请搜索" value="" />
+                <div class="module-navigationBrand-main-left-Alphabet">
+                    <span class="has"><a href="#brand-A">A</a> </span>
+                    <span class="has"><a href="#brand-B">B</a></span>
+                    <span class="has"><a href="#brand-C">C</a></span>
+                    <span class="has"><a href="#brand-D">D</a></span>
+                    <span class="has"><a href="#brand-E">E</a></span>
+                    <span class="has"><a href="#brand-F">F</a></span>
+                    <span class="has"><a href="#brand-G">G</a></span>
+                    <span class="has"><a href="#brand-H">H</a></span>
+                    <span class="has"><a href="#brand-I">I</a></span>
+                    <span class="has"><a href="#brand-J">J</a></span>
+                    <span class="has"><a href="#brand-K">K</a></span>
+                    <span class="has"><a href="#brand-L">L</a></span>
+                    <span class="has"><a href="#brand-M">M</a></span>
+                    <span class="has"><a href="#brand-N">N</a></span>
+                    <span class="has"><a href="#brand-O">O</a></span>
+                    <span class="has"><a href="#brand-P">P</a></span>
+                    <span class="hz"><a href="#brand-Q">Q</a></span>
+                    <span class="has"><a href="#brand-R">R</a></span>
+                    <span class="has"><a href="#brand-S">S</a></span>
+                    <span class="has"><a href="#brand-T">T</a></span>
+                    <span class="has"><a href="#brand-U">U</a></span>
+                    <span class="has"><a href="#brand-V">V</a></span>
+                    <span class="has"><a href="#brand-W">W</a></span>
+                    <span class="hz"><a href="#brand-X">X</a></span>
+                    <span class="has"><a href="#brand-Y">Y</a></span>
+                    <span class="hz"><a href="#brand-Z">Z</a></span>
+                    <span class="has"><a href="#brand-0-9">0-9</a></span>
+                </div>
+            </div>
+            <div class="module-navigationBrand-main-right">
+                <div class="module-navigationBrand-main-right-scroll" id="brand-A">
+                    <div class="module-navigationBrand-main-right-scroll-title">A</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ACQUADIPARMA帕尔玛之水
+                            </a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ALGENIST奥杰尼
+                            </a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>AMAZINGCOSMETICS奥玛珍</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ANNASUI 安娜苏</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list">
+                            <a>AtelierCologne欧珑</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ATKINSONS
+                            阿特金森</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-B">
+                    <div class="module-navigationBrand-main-right-scroll-title">B</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BALENCIAGA
+                            巴黎世家</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>beautyblender
+                            美妆蛋</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Belloite
+                            贝洛之舞</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BENEFIT贝玲妃</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BIOTHERM
+                            碧欧泉</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BOBBIBROWN
+                            芭比波朗</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BOTTEGA VENETA
+                            葆蝶家</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BROWGAL 眉宇</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BURBERRY
+                            博柏利</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BVLGARI 宝格丽</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BY TERRY 泰芮</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Blackmores
+                            澳佳宝</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>BeGlow白格</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-C">
+                    <div class="module-navigationBrand-main-right-scroll-title">C</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CLARINS 娇韵诗</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CAUDALIE
+                            欧缇丽</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CLINIQUE 倩碧</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CALVINKLEIN
+                            卡尔文克雷恩 </a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CHLOE蔻依</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CLARISONIC
+                            科莱丽</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CLIO 珂莱欧</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CAROLINA HERRERA
+                            卡罗琳娜埃莱拉</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>CHA LING 茶灵</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Cocochi Cosme
+                            可可琪可思曼</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-D">
+                    <div class="module-navigationBrand-main-right-scroll-title">D</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>DIOR  迪奥</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>DrJart 蒂佳婷</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>DECORATIVE
+                            DECORATIVE</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>DTRT 杜比丽夫</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Dr.arrivo
+                            Dr.arrivo</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-E">
+                    <div class="module-navigationBrand-main-right-scroll-title">E</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ESTEELAUDER
+                            雅诗兰黛</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ESTHEDERM
+                            雅诗敦</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>EISENBERG
+                            伊诗贝格</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ERNO LASZLO
+                            奥伦纳素 </a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ESTHE PRO LABO
+                            璞洛兰博</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>EVE LOM 伊芙容</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ELEMIS 艾丽美</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-F">
+                    <div class="module-navigationBrand-main-right-scroll-title">F</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Fresh 馥蕾诗</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>FORBELOVEDONE
+                            宠爱之名</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>FOREO斐珞尔</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Face Symbol
+                            分子乐园­</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-G">
+                    <div class="module-navigationBrand-main-right-scroll-title">G</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>GUERLAIN娇兰</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>GIVENCHY
+                            纪梵希</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>GIORGIOARMANI
+                            阿玛尼</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>GLAMGLOW
+                            格莱魅</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>GUCCI 古驰</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-H">
+                    <div class="module-navigationBrand-main-right-scroll-title">H</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>HERBORIST
+                            佰草集</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>HAKUBI 皓妍</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>HERA赫妍</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-I">
+                    <div class="module-navigationBrand-main-right-scroll-title">I</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ISSEYMIYAKE
+                            三宅一生</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>IOPE 艾诺碧</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Inoherb Tang
+                            相宜本草唐</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-J">
+                    <div class="module-navigationBrand-main-right-scroll-title">J</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>JUNEJACOBS
+                            尊积帕</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>JACK BLACK JACK
+                            BLACK</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-K">
+                    <div class="module-navigationBrand-main-right-scroll-title">K</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>KENZO 凯卓</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>KOSE 高丝</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-L">
+                    <div class="module-navigationBrand-main-right-scroll-title">L</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>LANCOME 兰蔻</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>LOEWE 罗意威</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>LANCASTER
+                            兰嘉丝汀</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>LABSERIES 朗仕</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>LANEIGE 兰芝</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>LEANON 两两</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-M">
+                    <div class="module-navigationBrand-main-right-scroll-title">M</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>M.A.C魅可</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MAKEUPFOREVER
+                            玫珂菲</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Miller Harris
+                            米勒•海莉诗</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MEGUMI NO HONPO
+                            惠之本铺</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MARC JACOBS
+                            莫杰</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MAOGEPING LIGHT
+                            毛戈平光韵</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Maison Margiela
+                            Maison Margiela</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MakeupEraser
+                            玫卡伊芮莎</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MarieDalgarColorStudio
+                            玛丽黛佳色彩工作室</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MENARDSP
+                            美伊娜多</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MIUMIU 默斯奇诺</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MONTBLANC
+                            缪缪</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>MOSCHINO
+                            万宝龙</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-N">
+                    <div class="module-navigationBrand-main-right-scroll-title">N</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>NARCISO RODRIGUEZ
+                            纳西索 罗德里格斯</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>nudestix
+                            羽德诗</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>NUXE 欧树</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>NUFACE NUFACE</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-O">
+                    <div class="module-navigationBrand-main-right-scroll-title">O</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Oleva+ 奥洛菲</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>OPI OPI</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-P">
+                    <div class="module-navigationBrand-main-right-scroll-title">P</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>PETERTHOMASROTH
+                            彼得罗夫</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>PERCYANDREED
+                            佩妍丽</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>PHILIPS飞利浦</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>PLABEAU谱莱博</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>PRADA 普拉达
+                            R</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-R">
+                    <div class="module-navigationBrand-main-right-scroll-title">R</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>ReFa 黎珐</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>RENE FURTERER
+                            馥绿德雅</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>REPACELL
+                            瑞铂希</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-S">
+                    <div class="module-navigationBrand-main-right-scroll-title">S</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SEPHORACOLLECTION
+                            丝芙兰</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SK-II SK-II</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SHISEIDO
+                            资生堂</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SHUUEMURA
+                            植村秀</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SHO-BI 妆美堂</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SEPHORA FAVORITES
+                            丝芙兰精选</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SYSTEM PROFESSIONAL
+                            德研丝</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SEBASTIAN
+                            塞巴斯汀</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SKININC思琦莹</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>SKINVITALS
+                            维肌泉</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>STAGEQ
+                            施婷姬蔻</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Sulwhasoo
+                            雪花秀</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>Swisse 斯维诗</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-T">
+                    <div class="module-navigationBrand-main-right-scroll-title">T</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>TIFFANY&amp;Co.
+                            蒂芙尼</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>TWEEZERMAN
+                            微之魅</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>The Beautools
+                            优姬美器</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-U">
+                    <div class="module-navigationBrand-main-right-scroll-title">U</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>UNITOUCH
+                            优莉缇</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-V">
+                    <div class="module-navigationBrand-main-right-scroll-title">V</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>VERSACE 范思哲</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>VAN CLEEF &amp;
+                            ARPELS 梵克雅宝</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-W">
+                    <div class="module-navigationBrand-main-right-scroll-title">W</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>WEI 蔚蓝之美</a>
+                        </li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>WELLA 威娜</a></li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-Y">
+                    <div class="module-navigationBrand-main-right-scroll-title">Y</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>YAMAN 雅萌</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>YSL
+                            圣罗兰美妆</a></li>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>YES!IC YES!IC</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-navigationBrand-main-right-scroll" id="brand-0-9">
+                    <div class="module-navigationBrand-main-right-scroll-title">0-9</div>
+                    <ul>
+                        <li class="module-navigationBrand-main-right-scroll-list"><a>3CE 三熹玉</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/lib/jquery/jquery.js"></script>
+    <script>
+        $('.module-navigationBrand-main-right').on("scroll", function() {
+            var scrollTop = $(document).scrollTop();
+            var floor = $('.module-navigationBrand-main-right-scroll');
+            var nav = $('.module-navigationBrand-main-left-Alphabet').find('span');
+            var items = $('.module-navigationBrand-main-right-scroll').find('.module-navigationBrand-main-right-scroll-title');
+            items.each(function() {
+                var m = $(this);
+                var itemTop = m.offset().top;
+                if (scrollTop > itemTop - 200) {
+                    console.log(scrollTop - itemTop);
+                } else {
+                    return false;
+                }
+            })
+        })
+    </script>
+</body>
+
+
+</html>
